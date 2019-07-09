@@ -22,10 +22,12 @@ const game = {
         }
 
 
-        $gameGrid.on('mouseenter','.columns.empty', function() {
+        $('.columns.empty').hover(function() {
             const columns = $(this).data('columns')
             const $lastAvailableCell = findLastAvailableCell(columns)
             $lastAvailableCell.addClass('hover-red')
+        }, function() {
+            $('.columns').removeClass('hover-red')
         })
     }
 
