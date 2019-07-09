@@ -19,13 +19,4 @@ class GameGrid {
             $gameGrid.append($row);
         }
     }
-
-    
-    // hoverEvent() {
-    //     const $gameGrid = $('#gameGrid')
-    //     $gameGrid.on('mouseenter','.columns.empty',function(){
-    //         console.log('here', this)
-    //     })
-    // }
-
 }

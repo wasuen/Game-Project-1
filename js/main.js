@@ -27,7 +27,6 @@ const game = {
             const columns = $(this).data('columns')
             const $lastAvailableCell = findLastAvailableCell(columns)
             $lastAvailableCell.addClass(`hover-${game.player}`)
-            console.log(`hover-${game.player}`)
         }, function() {
             $('.columns').removeClass(`hover-${game.player}`)
         })
@@ -38,18 +37,14 @@ const game = {
             $lastAvailableCell.removeClass('empty');
             $lastAvailableCell.addClass(game.player);
             $('.columns').removeClass(`hover-${game.player}`)
-            // $lastAvailableCell = findLastAvailableCell(columns)
-            // $lastAvailableCell.addClass(`hover-${game.player}`)
             if(game.playerFlag === true){
                 $('.columns').removeClass(`hover-${game.player}`)
-
                 game.player = 'black';
                 game.playerFlag = false;
                 $lastAvailableCell = findLastAvailableCell(columns)
                 $lastAvailableCell.addClass(`hover-${game.player}`)
             } else {
                 $('.columns').removeClass(`hover-${game.player}`)
-
                 game.player = 'red';
                 game.playerFlag = true;
                 $lastAvailableCell = findLastAvailableCell(columns)
