@@ -29,6 +29,12 @@ const game = {
         }, function() {
             $('.columns').removeClass('hover-red')
         })
+
+        $('.columns.empty').click(function() {
+            $lastAvailableCell.removeClass('empty');
+            $lastAvailableCell.addClass('red')
+
+
     }
 
 

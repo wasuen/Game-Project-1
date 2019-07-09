@@ -18,4 +18,9 @@ body {
 
 .hover-red {
     background: red;
+    opacity: 0.3;
+}
+
+.red {
+    background: red
 }
