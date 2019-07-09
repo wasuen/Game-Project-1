@@ -6,7 +6,8 @@ $('.submit').on('click', (e) => {
 });
 
 const game = {
-
+    playerFlag: true,
+    player: 'red',
     hoverEvent() {
         const $gameGrid = $('#gameGrid')
         
@@ -25,17 +26,35 @@ const game = {
         $('.columns.empty').hover(function() {
             const columns = $(this).data('columns')
             const $lastAvailableCell = findLastAvailableCell(columns)
-            $lastAvailableCell.addClass('hover-red')
+            $lastAvailableCell.addClass(`hover-${game.player}`)
+            console.log(`hover-${game.player}`)
         }, function() {
-            $('.columns').removeClass('hover-red')
+            $('.columns').removeClass(`hover-${game.player}`)
         })
 
         $('.columns.empty').click(function() {
+            const columns = $(this).data('columns')
+            let $lastAvailableCell = findLastAvailableCell(columns)
             $lastAvailableCell.removeClass('empty');
-            $lastAvailableCell.addClass('red')
+            $lastAvailableCell.addClass(game.player);
+            $('.columns').removeClass(`hover-${game.player}`)
+            // $lastAvailableCell = findLastAvailableCell(columns)
+            // $lastAvailableCell.addClass(`hover-${game.player}`)
+            if(game.playerFlag === true){
+                $('.columns').removeClass(`hover-${game.player}`)
 
+                game.player = 'black';
+                game.playerFlag = false;
+                $lastAvailableCell = findLastAvailableCell(columns)
+                $lastAvailableCell.addClass(`hover-${game.player}`)
+            } else {
+                $('.columns').removeClass(`hover-${game.player}`)
 
+                game.player = 'red';
+                game.playerFlag = true;
+                $lastAvailableCell = findLastAvailableCell(columns)
+                $lastAvailableCell.addClass(`hover-${game.player}`)
+            };
+        })
     }
-
-
 }

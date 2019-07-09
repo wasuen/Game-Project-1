@@ -21,6 +21,15 @@ body {
     opacity: 0.3;
 }
 
-.red {
-    background: red
+.hover-black {
+    background: black;
+    opacity: 0.3;
+}
+
+.columns.red {
+    background: red;
+}
+
+.columns.black {
+    background: black;
 }
