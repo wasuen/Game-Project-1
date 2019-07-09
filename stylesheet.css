@@ -1,3 +1,7 @@
+body {
+    text-align: center;
+}
+
 #gameGrid {
     background-color: yellow;
     display: inline-block
@@ -10,4 +14,8 @@
     background-color: white;
     border-radius: 50%;
     margin: 5px;
+}
+
+.hover-red {
+    background: red;
 }
