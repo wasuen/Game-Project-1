@@ -42,9 +42,8 @@ const game = {
         $('.columns.empty').click(function() {
             const columns = $(this).data('columns')
             let $lastAvailableCell = findLastAvailableCell(columns)
-            if(game.gameOver === false){
+            if(!$lastAvailableCell) return 
                 let rows = $lastAvailableCell[0].attributes[2].nodeValue
-            }
             $lastAvailableCell.attr('player', game.player)
 
             $lastAvailableCell = findLastAvailableCell(columns)
