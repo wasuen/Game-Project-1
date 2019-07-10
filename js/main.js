@@ -50,6 +50,11 @@ const game = {
             if($(this).hasClass('empty')){
                 $lastAvailableCell.removeClass('empty');
                 $lastAvailableCell.addClass(game.player);
+                if(game.player === 'red'){
+                    $lastAvailableCell.append('<img src="images/mario-pose2.png">')
+                } else {
+                    $lastAvailableCell.append('<img src="images/Bowser.png">')
+                }
             }
             $('.columns').removeClass(`hover-${game.player}`)
 
