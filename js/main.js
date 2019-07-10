@@ -5,13 +5,16 @@ $('.submit').on('click', (e) => {
     
 });
 
-$('restart').on('click', (e) => {
+$('#restart').on('click', (e) => {
     location.reload();
 });
 
 const game = {
     playerFlag: true,
     player: 'red',
+    ROWS: 6,
+    COL: 8,
+    gameOver: false,
     hoverEvent() {
         const $gameGrid = $('#gameGrid')
         
@@ -39,7 +42,9 @@ const game = {
         $('.columns.empty').click(function() {
             const columns = $(this).data('columns')
             let $lastAvailableCell = findLastAvailableCell(columns)
-            let rows = $lastAvailableCell[0].attributes[2].nodeValue
+            if(game.gameOver === false){
+                let rows = $lastAvailableCell[0].attributes[2].nodeValue
+            }
             $lastAvailableCell.attr('player', game.player)
 
             $lastAvailableCell = findLastAvailableCell(columns)
@@ -51,7 +56,9 @@ const game = {
 
             const winner = game.checkForWinner(rows, columns);
             if (winner){
+                game.gameOver = true;
                 alert(`Game Over! Player ${game.player} has won`);
+                $('.columns.empty').removeClass(`empty`)
                 return; 
             };
             
@@ -80,11 +87,10 @@ const game = {
 
         function checkDirection(direction){
             let total = 0;
-            let i = rows + direction.i;
+            let i = parseInt(rows) + direction.i;
             let j = columns + direction.j;
             let $next = $getCell(i,j);
-
-            while (i >= 0 && j >= 0 && i < this.ROWS && j < this.COL  && $next.player === game.player) {
+            while (i >= 0 && j >= 0 && i < game.ROWS && j < game.COL && game.player === $next.attr('player')) {
                 total++;
                 i += direction.i;
                 j += direction.j;
@@ -106,7 +112,19 @@ const game = {
             return checkWin({i:-1, j:0}, {i:1, j:0})
         }
 
-        return checkVerticals()
+        function checkHorizontals() {
+            return checkWin({i:0, j:-1}, {i:0, j:1})
+        }
+
+        function checkDiagonal1() {
+            return checkWin({i:-1, j:1}, {i:1, j:-1})
+        }
+
+        function checkDiagnoal2() {
+            return checkWin({i:-1, j:-1}, {i:1, j:1})
+        }
+
+        return checkVerticals() || checkHorizontals() || checkDiagnoal2() || checkDiagonal1()
 
     }
 }
