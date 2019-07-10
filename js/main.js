@@ -2,6 +2,7 @@ $('.submit').on('click', (e) => {
     $('.submit').css('visibility','hidden');
     const gameGrid = new GameGrid();
     game.hoverEvent();
+    
 });
 
 const game = {
@@ -34,7 +35,9 @@ const game = {
         $('.columns.empty').click(function() {
 
             const columns = $(this).data('columns')
+            console.log(columns);
             const rows = $(this).data('rows')
+            console.log(rows)
 
             let $lastAvailableCell = findLastAvailableCell(columns)
             if($(this).hasClass('empty')){
@@ -66,5 +69,41 @@ const game = {
                     $lastAvailableCell.addClass(`hover-${game.player}`)
             }};
         })
+    },
+    checkForWinner(rows, columns){
+
+        // function $getCell(i,j){
+        //     return $(`.columns[data-rows='${i}'][data-columns='${j}']`)
+        // }
+
+        // function checkDirection(direction){
+        //     let total = 0;
+        //     let i = rows + direction.i;
+        //     let j = columns + direction.j;
+        //     let $next = $getCell(i,j);
+        //     while (i >= 0 && j >= 0 && i < this.rows && j < this.COL && $next.data('player') === game.player) {
+        //         total++;
+        //         i += direction.i;
+        //         j += direction.j;
+        //         $next = $getCell(i,j);
+        //     }
+        //     return total;
+        // }
+
+        // function checkWin(directionA, directionB){
+        //     const total = 1 + checkDirection(directionA) + checkDirection(directionB);
+        //     if(total >= 4){
+        //         return game.player;
+        //     }else{
+        //         return null;
+        //     }
+        // }
+
+        // function checkVerticals() {
+        //     return checkWin({i:-1, j:0}, {i:1, j:0})
+        // }
+
+        // return checkVerticals()
+
     }
 }

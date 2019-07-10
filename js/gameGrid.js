@@ -1,7 +1,7 @@
 class GameGrid {
     constructor() {
-        this.rows = 6;
-        this.columns = 8;
+        this.ROWS = 6;
+        this.COL = 8;
         this.createGrid();
     }
 
@@ -9,10 +9,10 @@ class GameGrid {
     createGrid() {
         const $gameGrid = $('#gameGrid') 
         $gameGrid.empty()
-        for (let r = 0; r < this.rows; r++){
+        for (let r = 0; r < this.ROWS; r++){
             const $row = $('<div>')
                 .addClass('row');
-            for (let c = 0; c < this.columns; c++){
+            for (let c = 0; c < this.COL; c++){
                 const $columns = $('<div>')
                     .addClass('columns empty').attr('data-columns', c).attr('data-rows', r)
                 $row.append($columns);
