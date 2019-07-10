@@ -33,3 +33,13 @@ body {
 .columns.black {
     background: black;
 }
+
+#restart {
+    display: inline-block;
+    margin: 10px;
+}
+
+.start {
+    margin: 10px;
+    display: inline-block;
+}
