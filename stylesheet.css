@@ -1,9 +1,21 @@
+@font-face {
+    font-family: 'super_mario_256regular';
+    src: url('font/supermario256.woff2') format('woff2'),
+         url('font/supermario256.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 body {
     text-align: center;
+    background-image: url('images/MarioBackground.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 #gameGrid {
-    background-color: yellow;
+    background-color: #FFD987;
     display: inline-block
 }
 .columns {
@@ -22,7 +34,7 @@ body {
 }
 
 .hover-black {
-    background: black;
+    background: #43b047;
     opacity: 0.3;
 }
 
@@ -33,7 +45,7 @@ body {
 
 .columns.black {
     background-image: url("images/Bowser.png");
-    background: black;
+    background: #43b047;
 }
 
 .start {
@@ -44,12 +56,12 @@ body {
 }
 
 .submit{
-    width: 300px;
+    width: 200px;
     height: 75px;
 }
 
 #restart {
-    width: 300px;
+    width: 200px;
     height: 75px;
 }
 
@@ -58,4 +70,13 @@ img {
     margin: auto;
     height: 63px;
     width: 47px;
+}
+
+.gameName {
+    text-align: center;
+    font-size: 50px;
+    height: 70px;
+    font-family: 'super_mario_256regular';
+    color: white;
+    text-shadow: -4px 5px 10px black;
 }

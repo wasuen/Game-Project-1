@@ -61,9 +61,15 @@ const game = {
             const winner = game.checkForWinner(rows, columns);
             if (winner){
                 game.gameOver = true;
-                alert(`Game Over! Player ${game.player} has won`);
-                $('.columns.empty').removeClass(`empty`)
-                return; 
+                if(game.player === 'red'){
+                    alert('Game Over! Mario has won!');
+                    $('.columns.empty').removeClass(`empty`)
+                    return;
+                } else {
+                    alert(`Game Over! Bowser has won!`);
+                    $('.columns.empty').removeClass(`empty`)
+                    return;
+                } 
             };
             
             
