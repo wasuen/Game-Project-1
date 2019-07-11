@@ -7,7 +7,7 @@ class GameGrid {
 
 
     createGrid() {
-        const $gameGrid = $('#gameGrid') 
+        const $gameGrid = $('#game-grid') 
         $gameGrid.empty()
         for (let r = 0; r < this.ROWS; r++){
             const $row = $('<div>')
