@@ -7,6 +7,8 @@ Join in the epic battle in the most iconic video game showdown. Play with a frie
 ##Screenshot
 ![](images/screenshot.jpg)
 
+##Concept
+Connect 4 is a pretty universal game, so no initial wireframes were created. During my brainstorm, I envisioned two buttons for start and restart, accompanied by a 6x8 grid for the game itself. I al
 ##Technologies Used
 * HTML
 * CSS
