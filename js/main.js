@@ -6,7 +6,9 @@ $('.submit').on('click', (e) => {
 });
 
 $('#restart').on('click', (e) => {
-    location.reload();
+    $('#game-grid').empty()
+    const gameGrid = new GameGrid();
+    game.hoverEvent();
 });
 
 const game = {
@@ -62,11 +64,17 @@ const game = {
             if (winner){
                 game.gameOver = true;
                 if(game.player === 'red'){
-                    alert('Game Over! Mario has won!');
+                    $(".mario-modal").modal({
+                        fadeDuration: 200,
+                        fadeDelay: 1,
+                      });
                     $('.columns.empty').removeClass(`empty`)
                     return;
                 } else {
-                    alert(`Game Over! Bowser has won!`);
+                    $(".bowser-modal").modal({
+                        fadeDuration: 200,
+                        fadeDelay: 1,
+                      });
                     $('.columns.empty').removeClass(`empty`)
                     return;
                 } 

@@ -4,8 +4,8 @@
          url('font/supermario256.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-
 }
+
 
 body {
     text-align: center;
@@ -15,10 +15,12 @@ body {
 }
 
 #game-grid {
+    box-shadow: 2px 2px rgba(184, 164, 122, 0.644);
     background-color: #FFD987;
     display: inline-block
 }
 .columns {
+    box-shadow: inset 0px 0px 3px 4px rgba(184, 164, 122, 0.644);
     display: inline-block;
     text-align: center;
     width: 75px;
@@ -90,3 +92,42 @@ img {
     color: white;
     text-shadow: -4px 5px 10px black;
 }
+
+.mario-modal {
+    text-shadow: -4px 5px 10px black;
+    font-size: 20px;
+    color: white;
+    display: none;
+    font-family: 'super_mario_256regular';
+    background-color: red !important;
+    text-align: center !important;
+}
+
+.bowser-modal {
+    text-shadow: -4px 5px 10px black;
+    font-size: 20px;
+    color: white;
+    display: none;
+    font-family: 'super_mario_256regular';
+    background-color: #43b047 !important;
+    text-align: center !important;
+}
+
+.bowser-modal{
+    display:none;
+}
+
+.modal{
+    display:none;
+}
+
+#mariowins{
+    height: 200px;
+    width: 230px;
+}
+
+#bowserwins{
+    height: 170px;
+    width: 270px;
+}
+

@@ -8,6 +8,11 @@
     <link rel="stylesheet" href="stylesheet.css">
     <link rel="shortcut icon" href="">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+    <!-- jQuery Modal -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css"/>
+
 </head>
 <body>
     <div class="game-name">Mario Connect 4</div>
@@ -16,6 +21,16 @@
         <button id="restart">Restart</button>
     </div>
     <div id="game-grid"></div>
+    <div class="modal">
+        <div class='mario-modal'>
+            <div class='titleName'>Game Over! Mario has won!</div><br>
+            <img src="images/mariowins.png" id="mariowins"/>
+        </div>
+        <div class='bowser-modal'>
+            <div class='titleName'>Game Over! Bowser has won!</div><br>
+            <img src="images/bowserwins.jpg" id="bowserwins"/>
+        </div>
+    </div>
 </body>
 <script src="js/gameGrid.js"></script>
 <script src="js/main.js"></script>
