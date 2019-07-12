@@ -23,6 +23,7 @@ Connect 4 is a pretty universal game, so no initial wireframes were created. Dur
 * Adding a story page before leading to game start.
 * Adding sound affects to when token is dropped.
 * Adding score board for rounds won.
+* Adding computer opponent.
 
 ####Unresolved issues
 * Upon restart the winner of the last round begins the new round. Future feature should allow the loser to start.
