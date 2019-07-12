@@ -99,6 +99,7 @@ const game = {
         })
     },
     checkForWinner(rows, columns){
+        
         function $getCell(i,j){
             return $(`.columns[data-rows='${i}'][data-columns='${j}']`)
         }
