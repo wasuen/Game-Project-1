@@ -2,7 +2,7 @@
 
 ##Description
 
-Join in the epic battle in the most iconic video game showdown. Play with a friend as one player will side with Mario while the other sides with Bowser in this ultimate duo. Whichever player succeeds to connect four of their tokens will be the victor!
+Join in the epic battle in the most iconic video game showdown. Play with a friend as one player will side with Mario while the other sides with Bowser in this ultimate duel. Whichever player succeeds to connect four of their tokens will be the victor!
 
 ##Screenshot
 ![](images/screenshot.jpg)
